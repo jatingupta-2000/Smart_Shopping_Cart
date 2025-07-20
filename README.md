@@ -44,3 +44,36 @@ docker build -t smart_cart .
 ```bash
 docker run -d -p 5000:5000 -v $(pwd)/instance:/app/instance smart_cart:latest
 ```
+
+
+## Test API Locally Using curl
+
+```bash
+
+### Add Items
+curl -X POST http://127.0.0.1:5000/cart \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Items": [
+      {"name": "Laptop", "category": "Electronics", "price": 1000, "quantity": 3},
+      {"name": "Book", "category": "Books", "price": 20, "quantity": 2}
+    ]
+  }'
+
+### Set Customer
+curl -X POST http://127.0.0.1:5000/customer \
+  -H "Content-Type: application/json" \
+  -d '{
+    "Customer": {
+      "name": "Jatin",
+      "loyalty_level": "Gold"
+    }
+  }'
+
+### Get Cart
+curl http://127.0.0.1:5000/cart
+
+### Remove Item
+curl -X DELETE http://127.0.0.1:5000/cart/1
+
+```
