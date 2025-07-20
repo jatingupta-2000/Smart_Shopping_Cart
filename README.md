@@ -49,7 +49,6 @@ docker run -d -p 5000:5000 -v $(pwd)/instance:/app/instance smart_cart:latest
 ## Test API Locally Using curl
 
 ```bash
-
 ### Add Items
 curl -X POST http://127.0.0.1:5000/cart \
   -H "Content-Type: application/json" \
@@ -65,7 +64,6 @@ curl -X POST http://127.0.0.1:5000/customer \
   -H "Content-Type: application/json" \
   -d '{
     "Customer": {
-      "name": "Jatin",
       "loyalty_level": "Gold"
     }
   }'
