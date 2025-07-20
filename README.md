@@ -37,7 +37,7 @@ This is a Flask-based RESTful API for a smart shopping cart system. It allows us
 
 ```bash
 docker build -t smart_cart .
-
+```
 
 ### Run the Container
 
